@@ -2,13 +2,13 @@ import javax.swing.text.Keymap;
 import java.util.*;
 
 public class Subsets_II {
-    private static Map<List<Integer>,Integer> map=new HashMap<>();
+    private static Map<List<Integer>, Integer> map = new HashMap<>();
 
     public static List<List<Integer>> subsetsWithDup(int[] nums) {
-        List<Integer> list=new ArrayList<>();
-        dfs(nums,list,0);
-        List<List<Integer>> res=new ArrayList<>();
-        for (Map.Entry<List<Integer>,Integer> an:map.entrySet()){
+        List<Integer> list = new ArrayList<>();
+        dfs(nums, list, 0);
+        List<List<Integer>> res = new ArrayList<>();
+        for (Map.Entry<List<Integer>, Integer> an : map.entrySet()) {
             res.add(an.getKey());
         }
         return res;
@@ -16,27 +16,32 @@ public class Subsets_II {
 
     }
 
-    public  static void dfs(int[] nums,List<Integer> list,int tag){
-        if (tag== nums.length){
-            List<Integer> list1=new ArrayList<>();
-            for (Integer a:list){
+    public static void dfs(int[] nums, List<Integer> list, int tag) {
+        if (tag == nums.length) {
+            List<Integer> list1 = new ArrayList<>();
+            for (Integer a : list) {
                 list1.add(a);
             }
             Collections.sort(list1);
-            if (!map.containsKey(list1)){
+            if (!map.containsKey(list1)) {
 
-                map.put(list1,1);
+                map.put(list1, 1);
             }
             return;
         }
-            dfs(nums,list,tag+1);
-            list.add(nums[tag]);
-            dfs(nums,list,tag+1);
-            list.remove(list.size()-1);
+        dfs(nums, list, tag + 1);
+        list.add(nums[tag]);
+        dfs(nums, list, tag + 1);
+        list.remove(list.size() - 1);
     }
 
     public static void main(String[] args) {
         System.out.println(subsetsWithDup(new int[]{1,2,0}));
+
+//        float a=Float.MAX_VALUE;
+//        int b=Integer.MAX_VALUE;
+//        System.out.println(a);
+//        System.out.println(b);
     }
 
 }
