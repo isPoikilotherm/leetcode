@@ -40,6 +40,10 @@ public class Decode_Ways {
     }
 
     public static void main(String[] args) {
-        System.out.println(numDecodings("11111111111"));
+        //System.out.println(numDecodings("11111111111"));
+        Integer a=1000,b=1000;
+        Integer c=100,d=100;
+        System.out.println(a== b);
+        System.out.println(c ==d);
     }
 }
