@@ -7,7 +7,6 @@ public class Brick_Wall {
 
     public static int leastBricks(List<List<Integer>> wall) {
         int high=wall.size();
-        int weig=wall.get(0).size();
         int sum=0;
         for (int i : wall.get(0)) {
             sum+=i;
