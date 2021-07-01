@@ -5,11 +5,11 @@ import java.util.*;
 public class Delivering_information {
     public static int numWays(int n, int[][] relation, int k) {
         Map<Integer, Set<Integer>> map=new HashMap<>();
-        for (int i = 0; i < relation.length; i++) {
-            Set<Integer> set ;
-            set=map.getOrDefault(relation[i][0],new HashSet<Integer>());
-            set.add(relation[i][1]);
-            map.put(relation[i][0],set);
+        for (int[] ints : relation) {
+            Set<Integer> set;
+            set = map.getOrDefault(ints[0], new HashSet<>());
+            set.add(ints[1]);
+            map.put(ints[0], set);
         }
         Queue<Integer> queue=new LinkedList<>();
         int trail=0;
