@@ -1,6 +1,8 @@
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 public class Find_Kth_Largest_XOR_Coordinate_Value {
@@ -38,7 +40,15 @@ public class Find_Kth_Largest_XOR_Coordinate_Value {
     }
 
     public static void main(String[] args) {
-        int[][] can={{5,2},{1,6}};
-        kthLargestValue(can,1);
+//        int[][] can={{5,2},{1,6}};
+//        kthLargestValue(can,1);
+        List<Integer> list1=new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        System.out.println(list1.hashCode());
+        List<Integer> list2=new ArrayList<>(list1);
+        System.out.println(list2.equals(list1));
+
     }
 }
