@@ -1,6 +1,10 @@
 package leetcode;
 
 import java.util.PriorityQueue;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Smallest_K_LCCI {
     public int[] smallestK(int[] arr, int k) {
@@ -10,6 +14,8 @@ public class Smallest_K_LCCI {
         PriorityQueue<Integer> queue=new PriorityQueue<>((a,b)->{
             return b-a;
         });
+
+
         for (int i : arr) {
             if (queue.size() < k) {
                 queue.add(i);
